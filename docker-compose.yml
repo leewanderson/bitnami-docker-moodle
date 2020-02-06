@@ -9,7 +9,7 @@ services:
     volumes:
       - 'mariadb_data:/bitnami'
   moodle:
-    image: 'bitnami/moodle:3'
+    image: 'moodle'
     environment:
       - MARIADB_HOST=mariadb
       - MARIADB_PORT_NUMBER=3306
@@ -17,7 +17,7 @@ services:
       - MOODLE_DATABASE_NAME=bitnami_moodle
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
-      - '8000:8000'
+      - '80:80'
       - '443:443'
     volumes:
       - 'moodle_data:/bitnami'
